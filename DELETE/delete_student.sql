@@ -14,5 +14,3 @@ BEGIN
   DELETE FROM AP2.QLSV.dbo.Student
   WHERE StudentID = @student_id
 END
-
-exec delete_student 'A00003'
