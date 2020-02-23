@@ -1,4 +1,4 @@
-CREATE TRIGGER insert_Student
+CREATE TRIGGER trigger_insert_student
 ON Student
 INSTEAD OF INSERT
 AS

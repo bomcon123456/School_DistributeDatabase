@@ -1,5 +1,5 @@
 -- PROCEDURE INSERT INTO GRADE
-CREATE PROCEDURE insertGrade
+CREATE PROCEDURE insert_grade
 @GradeID int,
 @StudentID varchar(6),
 @CourseID int,
@@ -22,7 +22,7 @@ BEGIN
 				IF @count_Course_AP1_1 <= 0
 				BEGIN
 					DECLARE @count_Course_AP2_1 int;
-					SET @count_Course_AP2_1 = (SELECT COUNT(C.CourseID) FROM [AP2\MSSQLSERVER11].QLSV.dbo.Course as C WHERE C.CourseID = @CourseID)
+					SET @count_Course_AP2_1 = (SELECT COUNT(C.CourseID) FROM AP2.QLSV.dbo.Course as C WHERE C.CourseID = @CourseID)
 					IF @count_Course_AP2_1 <= 0
 						throw 51000, 'CourseID doesnt exist', 1
 					ELSE
@@ -37,7 +37,7 @@ BEGIN
 	BEGIN
 		DECLARE @count_Student_AP2 int;
 		SET @count_Student_AP2 = (SELECT COUNT(S.StudentID)
-				FROM [AP2\MSSQLSERVER11].QLSV.dbo.Student as S WHERE S.StudentID = @StudentID)
+				FROM AP2.QLSV.dbo.Student as S WHERE S.StudentID = @StudentID)
 		IF @count_Student_AP2 <= 0
 		BEGIN
 			throw 51000, 'StudentID doesnt exist', 1
@@ -45,7 +45,7 @@ BEGIN
 		ELSE
 		BEGIN
 			DECLARE @count_Course_AP2_2 int;
-			SET @count_Course_AP2_2 = (SELECT COUNT(C.CourseID) FROM [AP2\MSSQLSERVER11].QLSV.dbo.Course as C WHERE C.CourseID = @CourseID)
+			SET @count_Course_AP2_2 = (SELECT COUNT(C.CourseID) FROM AP2.QLSV.dbo.Course as C WHERE C.CourseID = @CourseID)
 				IF @count_Course_AP2_2 <= 0
 				BEGIN
 					DECLARE @count_Course_AP1_2 int;
@@ -53,10 +53,10 @@ BEGIN
 					IF @count_Course_AP1_2 <= 0
 						throw 51000, 'CourseID doesnt exist', 1
 					ELSE
-						INSERT INTO [AP2\MSSQLSERVER11].QLSV.dbo.Grade([GradeID],[StudentID],[CourseID],[Grade]) VALUES(@GradeID, @StudentID, @CourseID, @Grade)
+						INSERT INTO AP2.QLSV.dbo.Grade([GradeID],[StudentID],[CourseID],[Grade]) VALUES(@GradeID, @StudentID, @CourseID, @Grade)
 				END
 				ELSE
-						INSERT INTO [AP2\MSSQLSERVER11].QLSV.dbo.Grade([GradeID],[StudentID],[CourseID],[Grade]) VALUES(@GradeID, @StudentID, @CourseID, @Grade)
+						INSERT INTO AP2.QLSV.dbo.Grade([GradeID],[StudentID],[CourseID],[Grade]) VALUES(@GradeID, @StudentID, @CourseID, @Grade)
 		END
 	END
 END

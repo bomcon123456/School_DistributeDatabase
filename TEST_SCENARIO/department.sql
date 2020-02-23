@@ -1,5 +1,11 @@
 USE [QLSV]
 GO
+
+--
+SELECT * FROM AP1.QLSV.dbo.Department
+SELECT * FROM AP2.QLSV.dbo.Department
+--
+
 -- Insert
   -- Success Insert (Procedure)
   INSERT INTO [dbo].[Department]

@@ -1,5 +1,11 @@
 USE [QLSV]
 GO
+
+--
+SELECT * FROM AP1.QLSV.dbo.Course
+SELECT * FROM AP2.QLSV.dbo.Course
+--
+
 -- Insert
   -- Success Insert (Procedure)
   exec insert_course 

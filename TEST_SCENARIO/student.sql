@@ -1,3 +1,10 @@
+USE QLSV
+
+--
+SELECT * FROM AP1.QLSV.dbo.Student
+SELECT * FROM AP2.QLSV.dbo.Student
+--
+
 -- Insert
   -- Success Insert (Procedure)
   exec ...

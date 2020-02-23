@@ -1,4 +1,4 @@
-CREATE TRIGGER insert_Student_site2
+CREATE TRIGGER trigger_insert_Student_site2
 ON Student
 AFTER INSERT
 AS

@@ -1,5 +1,11 @@
 USE [QLSV]
 GO
+
+--
+SELECT * FROM AP1.QLSV.dbo.Grade
+SELECT * FROM AP2.QLSV.dbo.Grade
+--
+
 -- Insert
   -- Success Insert (Procedure)
   exec insert_grade
