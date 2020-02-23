@@ -1,7 +1,7 @@
--- PROCEDURE INSERT INTO GRADE
-ALTER PROCEDURE insert_department
+-- PROCEDURE INSERT INTO DEPARTMENT
+CREATE PROCEDURE insert_department
 @DepartmentID int,
-@DepartmentName varchar(255),
+@DepartmentName varchar(255)
 AS
 BEGIN
 	-- Check if student exists
