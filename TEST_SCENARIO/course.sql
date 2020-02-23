@@ -22,7 +22,7 @@ SELECT * FROM AP2.QLSV.dbo.Course
   -- Update course site 1
   exec update_course @course_id=9696, @credit=3
   -- Update course site 2
-  exec update_course @course_id=9697, @credit=3
+  exec update_course @course_id=9697, @course_name='wowoww'
   -- Update invalid course
   exec update_course @course_id=91
   -- Update invalid course
