@@ -20,7 +20,7 @@ SELECT * FROM getGrade('A00001');
 
 
 -- FUNCTION GET AVERAGE GRADE BY MSV
-ALTER FUNCTION getAverageGrade(@StudentID varchar(6))
+CREATE FUNCTION getAverageGrade(@StudentID varchar(6))
 RETURNS float
 AS
 BEGIN
@@ -41,13 +41,13 @@ BEGIN
 	RETURN @result
 END
 
-print dbo.getAverageGrade('A00003')
+print 'This student (A00003) has GPA=' + cast(dbo.getAverageGrade('A00003') as varchar(max))
 
 
 
 
 -- FUNCTION GET SUM CREDIT BY MSV
-ALTER FUNCTION getSumCredit(@StudentID varchar(6))
+CREATE FUNCTION getSumCredit(@StudentID varchar(6))
 RETURNS INT
 AS
 BEGIN
@@ -121,5 +121,5 @@ BEGIN
 	RETURN @result
 END
 
-print dbo.getSumCredit('A00003')
+print 'This student (A00003) has gathered total of ' + cast(dbo.getSumCredit('A00003') as varchar(max)) + ' credits.'
 

@@ -37,4 +37,4 @@ BEGIN
   END
 END
 
-exec update_course @course_id= '1', @credit=2
+--exec update_course @course_id= '1', @credit=2
