@@ -4,10 +4,6 @@ CREATE PROCEDURE insert_department
 @DepartmentName varchar(255)
 AS
 BEGIN
-	-- Check if student exists
-	IF ((SELECT COUNT(DepartmentID)
-			 FROM Department WHERE DepartmentID = @DepartmentID) <= 0)
-		throw 51000, 'DepartmentID doesnt exist', 1 
 	-- LOCK TABLE
 	DECLARE @t1 TABLE(DepartmentID int, DeparmentName varchar(255))
 	INSERT INTO @t1
@@ -20,11 +16,8 @@ BEGIN
 		WITH (TABLOCK, HOLDLOCK)
 	--
 
-	-- INSERT INTO GRADE
+	-- INSERT INTO DEPARTMENT
 	INSERT INTO Department([DepartmentID], [DepartmentName]) VALUES(@DepartmentID, @DepartmentName)
 END
 
--- insert example
-EXEC insert_department 999, 'TestDP'
-
-exec delete_department 999
+DROP PROCEDURE insert_department

@@ -11,7 +11,7 @@ BEGIN
     
   IF (@group IS NOT NULL)
   BEGIN
-    IF @group > 3 AND @group < 0
+    IF @group > 3 OR @group <= 0
       THROW 51000, 'Group invalid.', 1;
   END
   IF (@department_id IS NOT NULL)
