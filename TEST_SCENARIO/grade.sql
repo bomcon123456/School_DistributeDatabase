@@ -8,21 +8,19 @@ SELECT * FROM AP2.QLSV.dbo.Grade
 
 -- Insert
   -- Success Insert (Procedure)
-  exec insert_grade
+  exec insert_grade @GradeID = 9696, @StudentID = 'A00001', @CourseID = 1, @Grade = 5
   -- Duplicated Department_ID
-  exec insert_grade
+  exec insert_grade @GradeID = 9696, @StudentID = 'A00001', @CourseID = 1, @Grade = 5
 
 -- Update
   -- Update success
-  exec update_grade @grade_id=1, @grade=8.5
+  exec update_grade @grade_id=9696, @grade=8.5
   -- Update invalid grade
-  exec update_course @grade_id=91, @grade=10
-  exec update_course @grade_id=1, @grade=100
+  exec update_grade @grade_id=91, @grade=10
+  exec update_grade @grade_id=9696, @grade=100
 
 -- DELETE
-  -- insert to delete
-  exec insert_grade ...
   -- Delete valid department
-  exec delete_grade @grade_id=96
+  exec delete_grade @grade_id=9696
   -- Delete invalid grade (invalid id)
   exec delete_grade @grade_id=11231

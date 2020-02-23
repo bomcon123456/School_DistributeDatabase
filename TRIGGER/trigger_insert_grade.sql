@@ -1,4 +1,4 @@
-ALTER TRIGGER trigger_insert_grade
+CREATE TRIGGER trigger_insert_grade
 ON Grade
 AFTER INSERT
 AS
